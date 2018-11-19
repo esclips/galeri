@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'kcrgaleri/base.html' %}
+{% block galeri %}
 
-</body>
-</html>
+<div class="gallery" id="links">
+
+    {% for galeri_item in galeri_items%}
+    <a class="gallery-item" href="{{galeri_item.image.url}}" title="{{ galeri_item.name }}" data-gallery>
+        <div class="image">
+            <img src="{{galeri_item.image.url}}" alt="{{ galeri_item.name }}"/>
+
+        </div>
+        <div class="meta">
+            <strong>{{ galeri_item.name }}</strong>
+
+        </div>
+    </a>
+    {% endfor%}
+
+</div>
+
+{% endblock galeri%}

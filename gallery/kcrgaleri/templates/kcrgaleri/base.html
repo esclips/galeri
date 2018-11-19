@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <!-- META SECTION -->
+        <title>Me Project - Digital Media Technologies Definition</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <!-- END META SECTION -->
+
+        <!-- CSS INCLUDE -->
+        <link rel="stylesheet" type="text/css" id="theme" href="{% static 'kcrgaleri/css/site.css' %}"/>
+        <!-- EOF CSS INCLUDE -->
+    </head>
+    <body>
+        <!-- START PAGE CONTAINER -->
+        <div class="page-container">
+
+            <!-- START PAGE SIDEBAR -->
+            <div class="page-sidebar">
+                <!-- START X-NAVIGATION -->
+                <ul class="x-navigation">
+
+                    <li>
+                        <a href="index.html"><span ></span> <span class="xn-text">Me Project</span></a>
+                    </li>
+
+				</ul>
+				<!-- START CONTENT FRAME RIGHT -->
+                    <div class="content-frame-right">
+
+                        <div class="list-group border-bottom push-down-20">
+                            <a href="galery.html" class="list-group-item active">Kategoriler <span class="badge badge-primary"></span></a>
+                            <a href="#" class="list-group-item">Çiçekli Desenler <span class="badge badge-success">7</span></a>
+                            <a href="#" class="list-group-item">Modern Desenler <span class="badge badge-danger">3</span></a>
+                            <a href="#" class="list-group-item">Klasik Desenler <span class="badge badge-info">2</span></a>
+                            <a href="#" class="list-group-item">Geomtrik Desenler <span class="badge badge-warning">3</span></a>
+                        </div>
+
+                    </div>
+				</ul>
+                    <!-- END CONTENT FRAME RIGHT -->
+                <!-- END X-NAVIGATION -->
+            </div>
+            <!-- END PAGE SIDEBAR -->
+
+            <!-- PAGE CONTENT -->
+            <div class="page-content">
+
+                <!-- START X-NAVIGATION VERTICAL -->
+                <div class="x-navigation x-navigation-horizontal x-navigation-panel">
+
+                   <!-- SEARCH -->
+                    <li class="xn-search">
+                        <form role="form">
+                            <input type="text" name="search" placeholder="Arama..."/>
+                        </form>
+                    </li>
+                    <!-- END SEARCH -->
+					 <!-- SIGN OUT -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+                    </li>
+                    <!-- END SIGN OUT -->
+                <!-- START CONTENT FRAME -->
+              <div class="page-content-wrap">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                    <!-- START CONTENT FRAME TOP -->
+                    <div class="content-frame-top">
+                        <div class="page-title">
+                            <h2><span class="fa fa-image"></span> Desenler</h2>
+                        </div>
+
+                    </div>
+
+                    <!-- START CONTENT FRAME BODY -->
+                    <div class="content-frame-body content-frame-body-left">
+
+
+
+                        {% block galeri %}
+                        {% endblock galeri%}
+
+                        <ul class="pagination pagination-sm pull-right push-down-20 push-up-20">
+                            <li class="disabled"><a href="#">«</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </div>
+                    <!-- END CONTENT FRAME BODY -->
+                </div>
+                <!-- END CONTENT FRAME -->
+
+
+            </div>
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- END PAGE CONTAINER -->
+         <!-- MESSAGE BOX-->
+        <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-sign-out"></span> Çıkış <strong>Yap</strong> ?</div>
+                    <div class="mb-content">
+                        <p>Çıkış Yapmak İstediğinize Emin misiniz?</p>
+                        <p>Mevcut Kullanıcı Hesabınızla Devam Etmek İçin Hayır Butonuna Basınız.</p>
+                    </div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <a href="login.html" class="btn btn-success btn-lg">Evet</a>
+                            <button class="btn btn-default btn-lg mb-control-close">Hayır</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MESSAGE BOX-->
+        <!-- BLUEIMP GALLERY -->
+        <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+            <div class="slides"></div>
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+        </div>
+        <!-- END BLUEIMP GALLERY -->
+                </div>
+                </div>
+
+
+   </div>
+         <!-- START PRELOADS -->
+        <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
+        <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
+        <!-- END PRELOADS -->
+
+    <!-- START SCRIPTS -->
+        <!-- START PLUGINS -->
+        <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+        <!-- END PLUGINS -->
+
+        <!-- START THIS PAGE PLUGINS-->
+        <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+        <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+        <script type="text/javascript" src="js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
+        <script type="text/javascript" src="js/plugins/dropzone/dropzone.min.js"></script>
+        <script type="text/javascript" src="js/plugins/icheck/icheck.min.js"></script>
+        <!-- END THIS PAGE PLUGINS-->
+
+        <!-- START TEMPLATE -->
+
+
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/actions.js"></script>
+        <!-- END TEMPLATE -->
+
+        <script>
+            document.getElementById('links').onclick = function (event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement;
+                var link = target.src ? target.parentNode : target;
+                var options = {index: link, event: event,onclosed: function(){
+                        setTimeout(function(){
+                            $("body").css("overflow","");
+                        },200);
+                    }};
+                var links = this.getElementsByTagName('a');
+                blueimp.Gallery(links, options);
+            };
+        </script>
+
+            <!-- END SCRIPTS -->
+    </body>
+</html>
